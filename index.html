@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hora, Fecha y Ubicación</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>Mi Reloj Local</h1>
+        <p class="sub">Hora, fecha y ubicación en tiempo real</p>
+      </header>
+
+      <section class="cards">
+        <article class="card">
+          <h2>Hora</h2>
+          <p id="time" class="value">--:--:--</p>
+          <small id="tz" class="muted">Zona horaria: —</small>
+        </article>
+
+        <article class="card">
+          <h2>Fecha</h2>
+          <p id="date" class="value">—</p>
+        </article>
+
+        <article class="card">
+          <h2>Ubicación</h2>
+          <p id="location" class="value">Detectando…</p>
+          <small id="coords" class="muted">—</small>
+          <div class="actions">
+            <button id="locBtn" type="button" class="btn">
+              Actualizar ubicación
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <span>Hecho con HTML · CSS · JS</span>
+      </footer>
+    </main>
+  </body>
+</html>

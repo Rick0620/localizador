@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Páginas de noticias</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <style>
+      /* Trabajar con Mobile First con asistencia de un chatbot como Gemini. */
+      /* Font-size estándar
+      celular: 16px
+      tablet: 17px
+      computadora: 18px
+      */
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        min-height: 100%;
+        display: grid;
+        grid-template-rows: minmax(60px, auto) auto;
+        background-color: #aaa9a936;
+      }
+      header {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #71bbe6;
+        /* Se indica a un elemento que se adhiera a la pantalla una vez que alcanza un cierto punto durante el desplazamiento.  */
+        position: sticky;
+        /* El elemento se pegará a la parte superior de la ventana del navegador. */
+        top: 0;
+        z-index: 1000;
+      }
+      h1 {
+        font-size: 19px;
+        font-weight: bold;
+        color: white;
+        margin: 10px;
+      }
+
+      main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 10px;
+      }
+
+      .tarjeta-noticia {
+        /* Por defecto, se tiene 'align-items: stretch' haciendo que todos los ítems hijos se estiran verticalmente para igualar la altura del contenedor (o de la fila en la que están), aunque el contenido de cada hijo sea distinto. */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: white;
+        border: solid 2px rgb(133, 125, 125);
+        height: 470px;
+        width: 310px;
+        text-align: left;
+        margin: 10px;
+        padding: 10px;
+
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+          transform: translateY(-3%);
+        }
+      }
+
+      .img-noticia {
+        display: block;
+        /* Esta combinación permite variar el ancho de la imagen sin perder la relación de aspecto original */
+        height: 40%;
+        max-width: 286px;
+        margin: 0 auto;
+      }
+
+      .titulo-noticia {
+        margin: 10px 0;
+      }
+
+      .descripcion-noticia {
+        margin: 10px 0;
+        text-align: justify;
+        text-wrap: pretty;
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+
+        &:hover {
+          color: rgb(7, 7, 92);
+          font-weight: bold;
+        }
+      }
+
+      @media (min-width: 600px) {
+        body {
+          font-size: 17px;
+        }
+        h1 {
+          font-size: 20px;
+        }
+        .tarjeta-producto {
+          height: 500px;
+          width: 280px;
+        }
+        .img-producto {
+          display: block;
+          /* Esta combinación permite variar el ancho de la imagen sin perder la relación de aspecto original */
+          height: auto;
+          max-width: 256px;
+          margin: 0 auto;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          font-size: 18px;
+        }
+        h1 {
+          font-size: 21px;
+        }
+        .tarjeta-producto {
+          height: 540px;
+          width: 300px;
+        }
+        .img-producto {
+          display: block;
+          /* Esta combinación permite variar el ancho de la imagen sin perder la relación de aspecto original */
+          height: auto;
+          max-width: 276px;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Noticias Importantes</h1>
+    </header>
+    <main>
+      <article class="tarjeta-noticia">
+        <img
+          class="img-noticia"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFHhC9zx0T3mow4eOvEWOBdPITgku_XrhZmQ&s"
+          alt="Alias El Monstruo"
+        />
+
+        <h2 class="titulo-noticia">Capturan a “El Monstruo”</h2>
+        <p class="descripcion-noticia">
+          Erick Moreno, alias “El Monstruo”, fue detenido en Paraguay tras
+          operación internacional.
+        </p>
+        <p>
+          Fuente:
+          <a
+            href="https://caretas.pe/politica/el-monstruo-cae-en-paraguay-dina-boluarte-felicita-a-la-pnp-por-operativo-internacional/?utm_source=chatgpt.com"
+            target="_blank"
+            >Caretas</a
+          >
+        </p>
+      </article>
+      <article class="tarjeta-noticia">
+        <img
+          class="img-noticia"
+          src="https://www.mobileana.com/wp-content/uploads/2025/06/Apple-iPhone-17-Pro-Max-Cosmic-Orange.webp"
+          alt="iPhone 17 Pro"
+        />
+
+        <h2 class="titulo-noticia">Presentan iPhone 17 Pro</h2>
+        <p class="descripcion-noticia">
+          Apple revela el iPhone 17 Pro con chip A19 Pro y mejoras en cámara y
+          autonomía.
+        </p>
+        <p>
+          Fuente:
+          <a
+            href="https://www.apple.com/newsroom/2025/09/apple-unveils-iphone-17-pro-and-iphone-17-pro-max/?utm_source=chatgpt.com"
+            target="_blank"
+            >Apple Newsroom</a
+          >
+        </p>
+      </article>
+      <article class="tarjeta-noticia">
+        <img
+          class="img-noticia"
+          src="https://i1.sndcdn.com/artworks-hEZ4xgJEN7US1wFO-VThKyg-t500x500.jpg"
+          alt="Alias El Monstruo"
+        />
+
+        <h2 class="titulo-noticia">China presenta mano robótica</h2>
+        <p class="descripcion-noticia">
+          La compañía china Pan Motor presentó la “Wuji Hand”, mano robótica con
+          20 articulaciones.
+        </p>
+        <p>
+          Fuente:
+          <a
+            href="https://humanoid.guide/the-humanoid-hand-race-is-on/?utm_source=chatgpt.com"
+            target="_blank"
+            >Humanoid Guide</a
+          >
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

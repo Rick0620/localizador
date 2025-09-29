@@ -71,12 +71,6 @@
         text-align: left;
         margin: 10px;
         padding: 10px;
-
-        transition: transform 0.3s ease-in-out;
-
-        &:hover {
-          transform: translateY(-3%);
-        }
       }
 
       .img-noticia {
@@ -115,7 +109,7 @@
         h1 {
           font-size: 20px;
         }
-        .tarjeta-producto {
+        .tarjeta-noticia {
           height: 500px;
           width: 280px;
         }
@@ -135,9 +129,13 @@
         h1 {
           font-size: 21px;
         }
-        .tarjeta-producto {
+        .tarjeta-noticia {
           height: 540px;
           width: 300px;
+          transition: transform 0.3s ease-in-out;
+          &:hover {
+            transform: translateY(-3%);
+          }
         }
         .img-producto {
           display: block;
